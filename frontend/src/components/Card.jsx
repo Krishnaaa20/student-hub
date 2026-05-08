@@ -1,0 +1,36 @@
+import { forwardRef } from 'react';
+
+export const Card = forwardRef(({ className = '', children, ...props }, ref) => (
+  <div
+    ref={ref}
+    className={`bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden ${className}`}
+    {...props}
+  >
+    {children}
+  </div>
+));
+Card.displayName = 'Card';
+
+export const CardHeader = ({ className = '', children, ...props }) => (
+  <div className={`p-6 pb-4 border-b border-gray-50 ${className}`} {...props}>
+    {children}
+  </div>
+);
+
+export const CardTitle = ({ className = '', children, ...props }) => (
+  <h3 className={`text-xl font-semibold leading-none tracking-tight text-gray-900 ${className}`} {...props}>
+    {children}
+  </h3>
+);
+
+export const CardContent = ({ className = '', children, ...props }) => (
+  <div className={`p-6 ${className}`} {...props}>
+    {children}
+  </div>
+);
+
+export const CardFooter = ({ className = '', children, ...props }) => (
+  <div className={`p-6 pt-4 flex items-center border-t border-gray-50 ${className}`} {...props}>
+    {children}
+  </div>
+);
